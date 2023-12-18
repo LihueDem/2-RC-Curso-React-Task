@@ -1,22 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 
-const TaskAdd = () => {
+export const TaskAdd = () => {
+  const [valueTask, setValueTask] = useState("");
+  const onChangeDescription = (event) => {
+    setValueTask(event.target.value);
+  };
+
   return (
     <>
-      <div class="mb-3 col-5">
+      <div className="mb-3 col-5">
         <input
           type="text"
           className="form-control"
           placeholder="Agregar una tarea"
+          value={valueTask}
+          onChange={(event) => onChangeDescription(event)}
         />
       </div>
-      <div class="mb-3 col-5">
-        <button className="btn btn-success" onClick={() => {}}>
-          AGREGAR
-        </button>
+      <div className="mb-3 col-5">
+        <button className="btn btn-success">AGREGAR</button>
       </div>
     </>
   );
 };
-
-export default TaskAdd;
