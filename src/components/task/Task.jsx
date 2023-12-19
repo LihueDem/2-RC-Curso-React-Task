@@ -4,6 +4,11 @@ import { TaskAdd } from "./TaskAdd";
 import { dataCard } from "../../data/Task";
 
 export const Task = () => {
+  const onClickTaskAdd = (newValue) => {
+    //console.log(valueTask);
+    console.log(newValue);
+  };
+
   return (
     <>
       <div className="container py-5" id="featured-3">
@@ -13,7 +18,8 @@ export const Task = () => {
             <TaskCard key={item.id} dataCardItem={item} />
           ))}
         </div>
-        <TaskAdd />
+        {/*Callback */}
+        <TaskAdd onClickPadre={(value) => onClickTaskAdd(value)} />
       </div>
     </>
   );
