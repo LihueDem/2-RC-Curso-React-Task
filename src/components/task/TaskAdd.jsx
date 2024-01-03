@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-export const TaskAdd = ({ onClickPadre }) => {
+export const TaskAdd = ({ onClickAdd }) => {
   const [valueTask, setValueTask] = useState("");
 
-  const onChangeDescription = (event) => {
+  const onChangeDescripcion = (event) => {
+    // console.log(event.target.value);
     setValueTask(event.target.value);
-    //console.log(valueTask);
   };
 
   return (
@@ -16,14 +16,13 @@ export const TaskAdd = ({ onClickPadre }) => {
           className="form-control"
           placeholder="Agregar una tarea"
           value={valueTask}
-          onChange={onChangeDescription}
+          onChange={onChangeDescripcion}
         />
       </div>
-
       <div className="mb-3 col-5">
         <button
           className="btn btn-success"
-          onClick={() => onClickPadre(valueTask)}
+          onClick={() => onClickAdd(valueTask)}
         >
           AGREGAR
         </button>
@@ -31,6 +30,5 @@ export const TaskAdd = ({ onClickPadre }) => {
     </>
   );
 };
-
 //Esta funcion realiza un callback. Esto es cuando se quiere pasar un valor por una funcion
 //onClick={() => onClickPadre()}
