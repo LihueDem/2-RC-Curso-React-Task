@@ -1,13 +1,11 @@
-import React, { useState } from "react";
-
-export const TaskAdd = ({ onClickAdd }) => {
-  const [valueTask, setValueTask] = useState("");
-
-  const onChangeDescripcion = (event) => {
-    // console.log(event.target.value);
-    setValueTask(event.target.value);
-  };
-
+//import { useState } from "react";
+export const TaskAdd = ({
+  addTask,
+  asterisc,
+  onChangeTarea,
+  onChangeAsterisc,
+  onClickAdd,
+}) => {
   return (
     <>
       <div className="mb-3 col-5">
@@ -15,14 +13,23 @@ export const TaskAdd = ({ onClickAdd }) => {
           type="text"
           className="form-control"
           placeholder="Agregar una tarea"
-          value={valueTask}
-          onChange={onChangeDescripcion}
+          value={addTask}
+          onChange={onChangeTarea}
+        />
+      </div>
+      <div className="mb-3 col-5">
+        <input
+          type="password"
+          className="form-control"
+          placeholder="Agregar valoracion"
+          value={asterisc}
+          onChange={onChangeAsterisc}
         />
       </div>
       <div className="mb-3 col-5">
         <button
           className="btn btn-success"
-          onClick={() => onClickAdd(valueTask)}
+          onClick={(value) => onClickAdd(value)}
         >
           AGREGAR
         </button>
