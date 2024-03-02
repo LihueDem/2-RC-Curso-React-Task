@@ -32,10 +32,11 @@ export const Task = () => {
   //Nueva card
   const onClickNewTask = (newValue) => {
     //Genera objeto con los valores que recibe para la card nueva
+
     const newTaskObj = {
       id: addDataCard[addDataCard.length - 1].id + 1,
       taskTitle: addTask,
-      asterisc: asterisc,
+      asterisc: "*".repeat(asterisc.length),
     };
     //Almacena el objeto nuevo en el estado del array
     setAddDataCard([...addDataCard, newTaskObj]);
