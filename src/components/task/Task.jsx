@@ -4,8 +4,6 @@ import { TaskAdd } from "./TaskAdd";
 import { dataCard } from "../../data/Task";
 
 export const Task = () => {
-  //Elevar estado de componentes
-
   const [addDataCard, setAddDataCard] = useState(dataCard);
   const [addTask, setAddTask] = useState("");
   const [asterisc, setAsterisc] = useState("");
@@ -21,18 +19,9 @@ export const Task = () => {
     console.log(asterisc);
   };
 
-  //Funciones para TaskAdd
-  // const onClickAdd = (newValue) => {
-  //   addTask.newValue;
-  //   asterisc.newValue;
-  //   console.log(`${addTask} addTask`);
-  //   console.log(`${asterisc} asterisc`);
-  // };
-
   //Nueva card
   const onClickNewTask = (newValue) => {
     //Genera objeto con los valores que recibe para la card nueva
-
     const newTaskObj = {
       id: addDataCard[addDataCard.length - 1].id + 1,
       taskTitle: addTask,
@@ -81,3 +70,11 @@ export const Task = () => {
 //key={id}
 
 //Para generar una card nueva, hay que guardar el array en un useState para poder cambiar su estado
+
+//Funciones para TaskAdd
+// const onClickAdd = (newValue) => {
+//   addTask.newValue;
+//   asterisc.newValue;
+//   console.log(`${addTask} addTask`);
+//   console.log(`${asterisc} asterisc`);
+// };
